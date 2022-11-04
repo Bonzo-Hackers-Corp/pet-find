@@ -10,37 +10,28 @@ from rest_framework.permissions import IsAuthenticated
 logger = logging.getLogger(__name__)
 
 
-class TaskViewSet(viewsets.ModelViewSet):
-    """
-    Return information about task.
-    """
-    serializer_class = serializers.TaskSerializer
+class PostViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.PostSerializer
     # disable authentication
     #permission_classes = (IsAuthenticated, )
-    queryset = models.Task.objects.all()
+    queryset = models.Posts.objects.all()
 
     def create(self, request):
         """
-        Submit a new task.
+        Submit a new post.
         """
-        task_serializer = serializers.TaskSerializer(data=request.data)
-        task_serializer.is_valid(raise_exception=True)
+        post_serializer = serializers.PostSerializer(data=request.data)
+        post_serializer.is_valid(raise_exception=True)
 
-        logging.info("Creating task")
-        # task submit
-        task = models.Task()
-        task.description = request.data.get("description")
-        task.save()
-        logging.info("Task created")
+        post_serializer.save()
 
-        return Response({"msg": "Task created"}, status=status.HTTP_201_CREATED)
-
+        return Response({"msg": "Post created"}, status=status.HTTP_201_CREATED)
 
     def list(self, request):
         """
-        List all the tasks.
+        List all the posts.
         """
-        qs = models.Task.objects.all()
-        task_serializer = serializers.TaskSerializer(qs, many=True)
+        qs = models.Posts.objects.all()
+        posts_serializer = serializers.PostSerializer(qs, many=True)
 
-        return Response(task_serializer.data, status=status.HTTP_200_OK)
+        return Response(posts_serializer.data, status=status.HTTP_200_OK)
