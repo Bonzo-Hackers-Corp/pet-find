@@ -79,7 +79,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    "exampleapp.apps.ExampleappConfig",
+    "petfind.apps.PetfindConfig",
     "authconf.apps.AuthconfConfig",
 
 ]

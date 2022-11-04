@@ -19,6 +19,6 @@ from django.urls import re_path
 
 # api and auth routes
 urlpatterns = [
-    re_path("^api/", include("exampleapp.urls")),
+    re_path("^api/", include("petfind.urls")),
     re_path("^auth/", include("authconf.auth_urls"))
 ]

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from exampleapp import models
+from petfind import models
 
 
 class UserSerializer(serializers.ModelSerializer):
