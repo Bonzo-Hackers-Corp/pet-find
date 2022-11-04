@@ -6,6 +6,8 @@ from petfind import views
 
 router = DefaultRouter()
 router.register("posts", views.PostViewSet, "posts")
+router.register("comments", views.CommentViewSet, "commments")
+router.register("shelters", views.ShelterViewSet, "shelters")
 
 urlpatterns = [
     re_path("", include(router.urls))
