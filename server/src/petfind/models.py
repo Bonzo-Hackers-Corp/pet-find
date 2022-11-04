@@ -2,13 +2,6 @@ from operator import mod
 from django.db import models
 
 
-class User(models.Model):
-    name = models.CharField(max_length=64, unique=True, help_text="user full name")
-    role = models.CharField(max_length=32, blank=True, null=True, help_text="user role")
-
-    def __str__(self):
-        return self.name
-
 
 class Task(models.Model):
     description = models.CharField(max_length=128, help_text="Task description")
@@ -47,6 +40,7 @@ class Photos(models.Model):
 
 class Users(models.Model):
     id = models.IntegerField(primary_key=True)
+    nickname = models.CharField(max_length=20, unique= True)
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=30)
     phone_number = models.BigIntegerField(blank= True)
