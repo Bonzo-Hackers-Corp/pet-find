@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
 
+.container {
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--white);
+    align-content: center;
+    justify-content: center;
+}
+
 .appName {
     font-family: 'Train One', cursive;
+    font-size: 25px;
+    line-height: 0px;
+    color: var(--black);
 }
