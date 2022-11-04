@@ -44,3 +44,36 @@ class TaskViewSet(viewsets.ModelViewSet):
         task_serializer = serializers.TaskSerializer(qs, many=True)
 
         return Response(task_serializer.data, status=status.HTTP_200_OK)
+
+class PostViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.TaskSerializer
+    # disable authentication
+    #permission_classes = (IsAuthenticated, )
+    queryset = models.Posts.objects.all()
+
+    def create(self, request):
+        """
+        Submit a new post.
+        """
+        post_serializer = serializers.PostSerializer(data=request.data)
+        post_serializer.is_valid(raise_exception=True)
+
+        post_serializer.save()
+
+        # logging.info("Creating post")
+        # # task submit
+        # post = models.Posts()
+        # post.description = request.data.get("description")
+        # post.save()
+        # logging.info("Post created")
+
+        return Response({"msg": "Post created"}, status=status.HTTP_201_CREATED)
+
+    def list(self, request):
+        """
+        List all the posts.
+        """
+        qs = models.Posts.objects.all()
+        posts_serializer = serializers.PostSerializer(qs, many=True)
+
+        return Response(posts_serializer.data, status=status.HTTP_200_OK)
