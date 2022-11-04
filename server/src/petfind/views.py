@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.TaskSerializer
+    serializer_class = serializers.PostSerializer
     # disable authentication
     #permission_classes = (IsAuthenticated, )
     queryset = models.Posts.objects.all()
