@@ -20,9 +20,9 @@ class Posts(models.Model):
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()
     post_date_time = models.DateTimeField()
-    pet_date_time = models.DateTimeField()
+    pet_date_time = models.DateTimeField(blank= True)
     description = models.CharField(max_length=1000)
-    phone_number = models.BigIntegerField()
+    phone_number = models.BigIntegerField(blank= True)
     tags = models.JSONField(blank = True)
     reward  =models.JSONField(blank = True)
     
@@ -32,9 +32,9 @@ class Comments(models.Model):
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()
     post_date_time = models.DateTimeField()
-    pet_date_time = models.DateTimeField()
+    pet_date_time = models.DateTimeField(blank= True)
     description = models.CharField(max_length=1000)
-    phone_number = models.BigIntegerField()
+    phone_number = models.BigIntegerField(blank= True)
     photo = models.ImageField()
 
 
@@ -49,8 +49,8 @@ class Users(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=30)
-    phone_number = models.BigIntegerField()
-    photo = models.ImageField()
+    phone_number = models.BigIntegerField(blank= True)
+    photo = models.ImageField(blank= True)
     
 
 class Shelters(models.Model):
