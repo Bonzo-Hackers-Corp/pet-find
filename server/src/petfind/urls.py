@@ -8,5 +8,6 @@ router = DefaultRouter()
 router.register("posts", views.PostViewSet, "posts")
 
 urlpatterns = [
-    re_path("", include(router.urls))
+    re_path("", include(router.urls)),
+    re_path("shelter_list", views.ListShelters.as_view(), name="shelter_list")
 ]
