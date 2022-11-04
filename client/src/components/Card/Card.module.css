@@ -1,0 +1,53 @@
+@media all and (min-width: 500px) and (max-width: 2000px) {
+  .container {
+    height: 100%;
+    max-width: 30vw;
+    margin-right: 10px;
+    border-radius: 1rem;
+    display: inline-block;
+    flex-direction: column;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 500px) {
+  .container {
+    aspect-ratio: 4/3;
+    height: 100%;
+    max-width: 60vw;
+    margin-right: 10px;
+    border-radius: 1rem;
+    display: inline-block;
+    flex-direction: column;
+  }
+}
+
+.container:hover {
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+}
+
+.image {
+  object-fit: scale-down;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.description {
+  padding: 5%;
+}
+
+.title {
+  font-size: x-large;
+  color: var(--black);
+  text-align: start;
+}
+
+.info {
+  margin-top: 10px;
+  font-size: medium;
+  width: 100%;
+  text-align: start;
+  color: grey;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
