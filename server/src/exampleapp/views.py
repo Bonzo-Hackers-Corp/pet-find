@@ -15,7 +15,8 @@ class TaskViewSet(viewsets.ModelViewSet):
     Return information about task.
     """
     serializer_class = serializers.TaskSerializer
-    permission_classes = (IsAuthenticated, )
+    # disable authentication
+    #permission_classes = (IsAuthenticated, )
     queryset = models.Task.objects.all()
 
     def create(self, request):
