@@ -3,7 +3,7 @@ import os
 
 
 from django.core.management.base import BaseCommand
-
+from petfind import serializers
 
 class Command(BaseCommand):
     help = 'Importing mock data from json file to database'
@@ -18,5 +18,9 @@ class Command(BaseCommand):
             mock_data = file.read()
             data = json.loads(mock_data)
         
+        for post in data:
+            post_serializer = serializers.PostSerializer(data=post)
+            post_serializer.is_valid(raise_exception=True)
+
+            post_serializer.save()  
         
-        print(data)
