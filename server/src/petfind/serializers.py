@@ -5,7 +5,7 @@ from petfind import models
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.User
+        model = models.Users
         fields = ("name", "role")
 
 
@@ -29,7 +29,8 @@ class PostSerializer(serializers.ModelSerializer):
     title = serializers.CharField( help_text="Post title")
     author = serializers.CharField(max_length=50, help_text="Username")
     location = LocationSerializer()
-    date_time = serializers.DateTimeField()
+    post_date_time = serializers.DateTimeField()
+    pet_date_time = serializers.DateTimeField()
     description = serializers.CharField()
     phone_number = serializers.IntegerField()
     tags = serializers.JSONField()
