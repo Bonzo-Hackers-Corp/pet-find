@@ -46,7 +46,7 @@ class PostViewSet(viewsets.ModelViewSet):
         posts_serializer = serializers.PostSerializer(qs, many=True)
 
 
-        return Response(task_serializer.data, status=status.HTTP_200_OK)
+        return Response(posts_serializer.data, status=status.HTTP_200_OK)
 
 
 class ListShelters(APIView):
