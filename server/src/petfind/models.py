@@ -1,3 +1,4 @@
+from operator import mod
 from django.db import models
 
 
@@ -18,7 +19,8 @@ class Posts(models.Model):
     title = models.CharField(max_length=30, help_text="Post title")
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()
-    date_time = models.DateTimeField()
+    post_date_time = models.DateTimeField()
+    pet_date_time = models.DateTimeField()
     description = models.CharField(max_length=1000)
     phone_number = models.BigIntegerField()
     tags = models.JSONField(blank = True)
@@ -27,11 +29,32 @@ class Posts(models.Model):
 class Comments(models.Model):
     id = models.IntegerField(primary_key=True)
     post_id = models.ForeignKey(Posts, related_name=id)
-    title = models.CharField(max_length=30, help_text="Post title")
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()
-    date_time = models.DateTimeField()
+    post_date_time = models.DateTimeField()
+    pet_date_time = models.DateTimeField()
     description = models.CharField(max_length=1000)
     phone_number = models.BigIntegerField()
-    tags = models.JSONField(blank = True)
-    reward  =models.JSONField(blank = True)
+    photo = models.ImageField()
+
+
+class Photos(models.Model):
+    id = models.IntegerField(primary_key=True)
+    post_id = models.ForeignKey(Posts, related_name=id)
+    photo = models.ImageField()
+    if_primary = models.BooleanField()
+
+
+class Users(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=20)
+    surname = models.CharField(max_length=30)
+    phone_number = models.BigIntegerField()
+    photo = models.ImageField()
+    
+
+class Shelters(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=80)
+    location = models.JSONField()
+    description = models.CharField(max_length=1000)
