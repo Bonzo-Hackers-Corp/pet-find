@@ -4,6 +4,7 @@ import css from './NewPostOverlay.module.css';
 import { TextField, Button } from '@mui/material';
 import Map from "../Map/Map";
 import { useSelector } from 'react-redux';
+import { postPost } from "../../api/postPost";
 
 function NewPostOverlay(props) {
     const name = useSelector(state => state.user.name);
@@ -41,10 +42,11 @@ function NewPostOverlay(props) {
             reward: {
                 value: reward
             },
-            image: await getBase64(image)
+            photo: await getBase64(image)
         }
 
-        console.log(json);
+        await postPost(json);
+        props.onCancel();
     }
 
     return (

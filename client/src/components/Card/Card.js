@@ -11,11 +11,12 @@ const cardClick = (props, dispatch) => {
 
 const Card = (props) => {
   const dispatch = useDispatch();
+  
   return (
     <div className={css.container}>
       <div className={css.button} onClick={() => cardClick(props, dispatch)}>
         <div className={css.test}>
-          <img className={css.image} src={Image} alt="dog" />
+          <img className={css.image} src={props.image !== null ? props.image : Image} alt="dog" />
         </div>
         <div className={css.description}>
           <div className={css.title}>{props.title}</div>

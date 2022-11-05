@@ -24,10 +24,11 @@ function Pin(props) {
     )
 }
 
-function MapMarker() {
+function MapMarker(props) {
+
     return (
         <div className={css.container}>
-            <Pin />
+            <Pin image={props.photo}/>
         </div>
     )
 }

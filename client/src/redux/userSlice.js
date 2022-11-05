@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    name: "",
-    surname: "",
-    phone: "",
+    name: "Jan",
+    surname: "Kowalski",
+    phone: "123456789",
     modalOpen: false,
     modalData: {
       id: 1,

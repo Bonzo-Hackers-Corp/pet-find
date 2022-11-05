@@ -9,7 +9,7 @@ const CardList = () => {
   return (
     <div className={css.container}>
       {postList.map((item) => (
-        <Card title={item.title} description={item.description} />
+        <Card title={item.title} description={item.description} image={item.photo}/>
       ))}
     </div>
   );
