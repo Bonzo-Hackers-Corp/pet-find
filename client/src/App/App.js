@@ -19,12 +19,12 @@ function App() {
       <Map />
       {true && <Modal />}
       <CardList />
-      <BottomBar 
+      <BottomBar
         onClickNew={() => setNewPostOverlayVisible(true)}
         onNewCancel={() => setNewPostOverlayVisible(false)}
       />
 
-      <NewPostOverlay visible={newPostOverlayVisible}/>
+      {/* <NewPostOverlay visible={newPostOverlayVisible}/> */}
     </div>
   );
 }
