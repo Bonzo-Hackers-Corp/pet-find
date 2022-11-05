@@ -3,7 +3,7 @@ import { getList } from "../api/getList";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const response = await getList();
-  console.log(response);
+  return response;
 });
 
 export const postsSlice = createSlice({
@@ -15,7 +15,9 @@ export const postsSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    builder.addCase(fetchPosts.fulfilled, (state, actions) => {});
+    builder.addCase(fetchPosts.fulfilled, (state, action) => {
+      state.posts = action.payload;
+    });
   },
 });
 
