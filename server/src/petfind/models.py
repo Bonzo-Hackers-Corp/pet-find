@@ -12,11 +12,11 @@ class Posts(models.Model):
     location = models.JSONField(null=True, blank=True)
     post_date_time = models.DateTimeField(null=True, blank=True)
     pet_date_time = models.DateTimeField(null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
     phone_number = models.IntegerField(null=True, blank=True)
     tags = models.JSONField(null=True, blank=True)
     reward = models.JSONField(null=True, blank=True)
-    photo = models.CharField(max_length=1000, null=True, blank=True)
+    photo = models.TextField(null=True, blank=True)
 
 
 class Comments(models.Model):
@@ -25,14 +25,14 @@ class Comments(models.Model):
     location = models.JSONField(null=True, blank=True)
     post_date_time = models.DateTimeField(null=True, blank=True)
     pet_date_time = models.DateTimeField( null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
     phone_number = models.IntegerField(null=True, blank=True)
-    photo = models.CharField(max_length=1000, null=True, blank=True)
+    photo = models.TextField(null=True, blank=True)
 
 
 class Photos(models.Model):
     post_id = models.IntegerField()
-    photo = models.CharField(max_length=1000)
+    photo = models.TextField(max_length=1000)
     if_primary = models.BooleanField()
 
 
@@ -41,17 +41,17 @@ class Users(models.Model):
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=30)
     phone_number = models.IntegerField(blank= True)
-    photo = models.CharField(max_length=1000, blank= True)
+    photo = models.TextField(max_length=1000, blank= True)
     
 
 class Shelters(models.Model):
     name = models.CharField(max_length=80, null=True, blank=True)
     location = models.JSONField(null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
     phone_number = models.IntegerField(null=True, blank=True)
 
 
 
 class Location(models.Model):
-    longtitude = models.CharField(max_length=1000, null=True, blank=True)
-    latitude = models.CharField(max_length=1000, null=True, blank=True)
+    longtitude = models.TextField(max_length=1000, null=True, blank=True)
+    latitude = models.TextField(max_length=1000, null=True, blank=True)
