@@ -3,10 +3,14 @@ import css from './Map.module.css';
 import { useEffect, useState } from "react";
 
 import GoogleMapReact from 'google-map-react';
+import MapMarker from "../MapMarker/MapMarker";
+import { fetchPosts } from '../../redux/postsSlice';
+import { useDispatch } from 'react-redux';
 
 function Map() {
     const [position, setPosition] = useState({lat: 52.43205668262439, lng: 17.072698615344446});
     const [zoom, setZoom] = useState(15);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -15,7 +19,9 @@ function Map() {
                 lng: position.coords.longitude
             });
         });
-    }, []);
+
+        dispatch(fetchPosts());
+    }, [dispatch]);
 
     const mapOptions = (maps) => {
         return {
@@ -53,7 +59,7 @@ function Map() {
                 zoom={zoom}
                 options={mapOptions}
             >
-
+                <MapMarker lat={position.lat} lng={position.lng}/>
             </GoogleMapReact>
         </div>
     )
