@@ -39,7 +39,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.CommentSerializer
-    queryset = models.Posts.objects.all()
+    queryset = models.Comments.objects.all()
 
     def create(self, request):
         """
@@ -56,6 +56,8 @@ class CommentViewSet(viewsets.ModelViewSet):
     def list(self, request):
         qs = models.Comments.objects.all()
         comments_serializer = serializers.CommentSerializer(qs, many = True)
+
+        return Response(comments_serializer.data, status=status.HTTP_200_OK)
 
 
 class ShelterViewSet(viewsets.ModelViewSet):
@@ -78,3 +80,5 @@ class ShelterViewSet(viewsets.ModelViewSet):
     def list(self, request):
         qs = models.Shelters.objects.all()
         shelter_serializer = serializers.ShelterSerializer(qs, many = True)
+
+        return Response(shelter_serializer.data, status=status.HTTP_200_OK)

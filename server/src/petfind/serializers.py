@@ -43,7 +43,7 @@ class PostSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CommentSerializer(serializers.ModelSerializer):
-    #foregin key serializer
+    post_id = serializers.IntegerField(source = 'posts.id')
     title = serializers.CharField( help_text="Post title")
     author = serializers.CharField(max_length=50, help_text="Username")
     location = LocationSerializer()

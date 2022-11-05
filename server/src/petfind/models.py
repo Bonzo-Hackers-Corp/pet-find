@@ -20,7 +20,6 @@ class Posts(models.Model):
     
 class Comments(models.Model):
     post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30, help_text="Post title")
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()
     post_date_time = models.DateTimeField()
