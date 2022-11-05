@@ -39,4 +39,6 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Posts
         fields = '__all__'
+    
+    
 
