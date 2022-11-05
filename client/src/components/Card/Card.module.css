@@ -63,3 +63,8 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.button {
+  border: transparent;
+  background: transparent;
+}
