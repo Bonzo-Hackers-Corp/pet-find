@@ -78,6 +78,32 @@ class CommentsViewSet(viewsets.ModelViewSet):
         return Response(comments_serializer.data, status=status.HTTP_200_OK)
 
 
+class SheltersViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.SheltersSerializer
+    queryset = models.Shelters.objects.all()
+
+    def create(self, request):
+        """
+            Add new verfied shelter
+        """
+        shelters_serializer = serializers.SheltersSerializer(data = request.data)
+        shelters_serializer.is_valid(raise_exception = True)
+
+        shelters_serializer.save()
+
+        return Response({"msg": "Shelter created"}, status=status.HTTP_201_CREATED)
+
+    def list(self, request):
+        """
+        List all the shelters.
+        """
+        qs = models.Shelters.objects.all()
+        shelters_serializer = serializers.SheltersSerializer(qs, many=True)
+
+
+        return Response(shelters_serializer.data, status=status.HTTP_200_OK)
+
+
 class ListShelters(APIView):
     """
     View to list shelters.
