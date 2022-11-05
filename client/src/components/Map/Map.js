@@ -61,7 +61,7 @@ function Map(props) {
                     props.markerSelected !== undefined ? <MapMarker lat={props.markerSelected.lat} lng={props.markerSelected.lng}/> : null
                     : posts.map((post, index) => {
                         return (
-                            <MapMarker image={post.image} lat={post.location.latitude} lng={post.location.longtitude} key={`marker-${index}`}/>
+                            <MapMarker lat={post.location.latitude} lng={post.location.longtitude} key={`marker-${index}`}/>
                         );
                     })
                 }

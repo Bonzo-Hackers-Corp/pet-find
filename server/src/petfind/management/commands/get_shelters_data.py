@@ -5,18 +5,18 @@ from django.core.management.base import BaseCommand
 from petfind import serializers
 
 class Command(BaseCommand):
-    help = 'Importing mock data from json file to database'
+    help = 'Importing mock shelter data from json file to database'
         
     def handle(self, **options):
         module_dir = os.path.dirname(__file__)
-        file_path = os.path.join(module_dir, 'posts.json')
+        file_path = os.path.join(module_dir, 'shelters.json')
         with open(file_path, 'r') as file:
             mock_data = file.read()
             data = json.loads(mock_data)
         
-        for post in data:
-            post_serializer = serializers.PostSerializer(data=post)
-            post_serializer.is_valid(raise_exception=True)
+        for shelter in data:
+            shelter_serializer = serializers.ShelterSerializer(data=shelter)
+            shelter_serializer.is_valid(raise_exception=True)
 
-            post_serializer.save()  
+            shelter_serializer.save()  
         

@@ -8,7 +8,7 @@ function BottomBar(props) {
             <div className={css.addButton} onClick={props.onClickNew}>
                 <p className={css.addButtonText}>+</p>
             </div>
-            <p className={css.textButton} onClick={() => console.log("test mapa")}>Mapa</p>
+            <p className={css.textButton} onClick={() => console.log("test mapa")}>Lista</p>
         </div>
     )
 }
