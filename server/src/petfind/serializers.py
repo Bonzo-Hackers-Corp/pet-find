@@ -43,7 +43,6 @@ class PostSerializer(serializers.ModelSerializer):
 
 class CommentsSerializer(serializers.ModelSerializer):
     post_id = serializers.IntegerField()
-    title = serializers.CharField(help_text="Post title")
     author = serializers.CharField(help_text="Username")
     location = serializers.JSONField()
     post_date_time = serializers.DateTimeField()
