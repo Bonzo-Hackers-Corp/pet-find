@@ -3,10 +3,10 @@
         "name": "Schronisko dla zwierząt w Poznaniu",
         "verified": true,
         "location": {"longtitude":52.38913481519436, "latitude":17.02748659204782},
-        "description": "To jest schronisko. Mamy pieski i kotki. Come to us"
+        "description": "To jest schronisko. Mamy pieski i kotki."
     },
     {
-        "name": "TOZ Schronisko dla bezdomnych zwierząt we Wrocławiu",
+        "name": "Schronisko zwierząt we Wrocławiu",
         "verified": true,
         "location": {"longtitude":51.15322977515308,  "latitude":16.997524211919803},
         "description": "Zapraszamy do naszego schroniska. Dzwoncie!"
