@@ -40,6 +40,8 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Posts
         fields = '__all__'
+    
+    
 
 
 class CommentsSerializer(serializers.ModelSerializer):
