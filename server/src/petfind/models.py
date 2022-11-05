@@ -7,25 +7,27 @@ class Task(models.Model):
 
 
 class Posts(models.Model):
-    title = models.CharField(max_length=30, help_text="Post title")
-    author = models.CharField(max_length=50, help_text="Username")
-    location = models.JSONField()
-    post_date_time = models.DateTimeField()
-    pet_date_time = models.DateTimeField(blank= True)
-    description = models.CharField(max_length=1000)
-    phone_number = models.IntegerField(blank= True)
-    tags = models.JSONField(blank = True)
-    reward = models.JSONField(blank = True)
-    
+    title = models.CharField(max_length=30, help_text="Post title", null=True, blank=True)
+    author = models.CharField(max_length=50, help_text="Username", null=True, blank=True)
+    location = models.JSONField(null=True, blank=True)
+    post_date_time = models.DateTimeField(null=True, blank=True)
+    pet_date_time = models.DateTimeField(null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    phone_number = models.IntegerField(null=True, blank=True)
+    tags = models.JSONField(null=True, blank=True)
+    reward = models.JSONField(null=True, blank=True)
+    photo = models.CharField(max_length=1000, null=True, blank=True)
+
+
 class Comments(models.Model):
     post_id = models.IntegerField()
-    author = models.CharField(max_length=50, help_text="Username")
-    location = models.JSONField()
-    post_date_time = models.DateTimeField()
-    pet_date_time = models.DateTimeField(blank= True)
-    description = models.CharField(max_length=1000)
-    phone_number = models.IntegerField(blank= True)
-    photo = models.CharField(max_length=1000)
+    author = models.CharField(max_length=50, help_text="Username", null=True, blank=True)
+    location = models.JSONField(null=True, blank=True)
+    post_date_time = models.DateTimeField(null=True, blank=True)
+    pet_date_time = models.DateTimeField( null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    phone_number = models.IntegerField(null=True, blank=True)
+    photo = models.CharField(max_length=1000, null=True, blank=True)
 
 
 class Photos(models.Model):
@@ -43,13 +45,13 @@ class Users(models.Model):
     
 
 class Shelters(models.Model):
-    name = models.CharField(max_length=80)
-    location = models.JSONField()
-    description = models.CharField(max_length=1000)
-    phone_number = models.IntegerField()
+    name = models.CharField(max_length=80, null=True, blank=True)
+    location = models.JSONField(null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    phone_number = models.IntegerField(null=True, blank=True)
 
 
 
 class Location(models.Model):
-    longtitude = models.CharField(max_length=1000)
-    latitude = models.CharField(max_length=1000)
+    longtitude = models.CharField(max_length=1000, null=True, blank=True)
+    latitude = models.CharField(max_length=1000, null=True, blank=True)
