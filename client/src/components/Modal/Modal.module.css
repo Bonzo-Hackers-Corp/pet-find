@@ -53,3 +53,15 @@
 .phone {
   margin-top: 20px;
 }
+
+.close {
+  border: transparent;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  color: grey;
+  z-index: 40;
+  top: 5px;
+  right: 10px;
+}

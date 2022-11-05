@@ -12,12 +12,13 @@ import NewPostOverlay from "../components/NewPostOverlay/NewPostOverlay";
 
 function App() {
   const [newPostOverlayVisible, setNewPostOverlayVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <div className={css.app}>
       <TopBar />
       <Map />
-      {true && <Modal />}
+      {modalVisible && <Modal />}
       <CardList />
       <BottomBar
         onClickNew={() => setNewPostOverlayVisible(true)}
