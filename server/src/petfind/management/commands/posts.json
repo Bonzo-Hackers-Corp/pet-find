@@ -1,0 +1,112 @@
+[
+    {
+        "title": "Zagubiony kot!",
+        "author": "Jan Szuka",
+        "location": {"longtitude": 52.40654798907811, "latitude": 16.937741942432073},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Black Cat. Big.",
+        "phone_number": "402241998",
+        "tags": ["cat","Poznań"],
+        "reward": { "value": 0 , "description": "brak" }
+    },
+    {
+        "title": "Pomocy! Boa mi uciekł!",
+        "author": "Hania Pieniąrzek",
+        "location": { "longtitude": 52.40781773492674, "latitude": 16.929255433186654},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Niegroźny, najedzony. Nie trzeba się bać! Zostawiłam otwarte okno przed wyjazdem nad morze. W nagrodę dużo pieniążków!",
+        "phone_number": "202345123",
+        "tags": ["wąż", "rzeczny", "niebezpieczny"],
+        "reward": {"value": 2000 , "description": "DUŻŻOOO PIENIĄŻKÓW" }
+    },
+    {
+        "title": "Piesek, mój Brutus",
+        "author": "Karol",
+        "location": {"longtitude": 52.403609107237074, "latitude" :16.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Zagubił się mój Brutus! Nie wiem jak mam dalej żyć...",
+        "phone_number": "932418024",
+        "tags": [],
+        "reward": {"value": 1, "description": "Złotówka..."  }
+    },
+    {
+        "title": "Zgubiłem żonkę!",
+        "author": "Stefan Mostowiak",
+        "location": {"longtitude": 55.003609107237074, "latitude" :16.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Ostatni raz widziana w parku. Owczarek niemiecki o przyjaznym usposobieniu.",
+        "phone_number": "273235189",
+        "tags": [],
+        "reward": {}
+    },
+    {
+        "title": "To wszystko po wyjściu na piwo",
+        "author": "Szymon Pan Pansterniak",
+        "location": {"longtitude": 52.403609107237074, "latitude" :16.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Najpierw zgubiło się piwo, później pies przy Warcie... Znalezione piwo też przyjmę.",
+        "phone_number": "932418024",
+        "tags": [],
+        "reward": { "value": null, "description": "Tak 1 piwo" }
+    },
+    {
+        "title": "KRÓLIK...",
+        "author": "Kasia Lipowska",
+        "location": {"longtitude": 52.103609107237074, "latitude" :16.228600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Pliska, dajcie znać jeśli widzieliście go!",
+        "phone_number": "932418111",
+        "tags": [],
+        "reward": {}
+    },
+    {
+        "title": "Labrador, mój ulubiony!",
+        "author": "Janina Amarantowa",
+        "location": {"longtitude": 52.803609107237074, "latitude" :16.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Brązowy (wybierany pod kolor ścian), duży lablador zaginął podczas spaceru.",
+        "phone_number": "931628024",
+        "tags": ["blablador","lablador"] ,
+        "reward": {}
+    },
+    {
+        "title": "POMOCY, pomocy, PoMoCy",
+        "author": "Jakub Nieznany",
+        "location": {"longtitude": 51.403609107237074, "latitude" :17.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Zagubiona mysz z mojego domu, podejrzewam kota sasiadów. Zbieram dowody do sprawy w sądzie.",
+        "phone_number": "882418024",
+        "tags": [],
+        "reward": {  "value": null, "description": "Pomoc przy twoich pozwach"}
+    },
+    {
+        "title": "Zagubiony kot w kartonach",
+        "author": "Hanka Mostowiak",
+        "location": {"longtitude": 50.003609107237074, "latitude" :14.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Podczas szybkiej jazdy, wyskoczył przez okno samochodu prosto w kartony, w które wjechałam. Widziałam jak uciekał.",
+        "phone_number": "191118024",
+        "tags": [],
+        "reward": { "value": null, "description": "Zestaw kartonów" }
+    },
+    {
+        "title": "Nie mam z kim oglądać Rolnik szuka żony",
+        "author": "Krzysztof Krakowski",
+        "location": {"longtitude": 54.403609107237074, "latitude" :18.928600974171527},
+        "post_date_time": "2020-01-01T15:10:10Z",
+        "pet_date_time": "2020-01-01T15:10:10Z",
+        "description": "Kotek zaginął po 3 odcinku Rolnika, w którym Mateusz wyrzucił Zuzię z gospodarstwa",
+        "phone_number": "777418024",
+        "tags": ["rolnik", "cat"],
+        "reward": {  "value": null, "description": "Uścisk prezesa"}
+    }
+]
