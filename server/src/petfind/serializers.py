@@ -40,3 +40,18 @@ class PostSerializer(serializers.ModelSerializer):
         model = models.Posts
         fields = '__all__'
 
+
+class CommentsSerializer(serializers.ModelSerializer):
+    post_id = serializers.IntegerField(source="posts.id")
+    title = serializers.CharField(help_text="Post title")
+    author = serializers.CharField(help_text="Username")
+    location = serializers.JSONField()
+    post_date_time = serializers.DateTimeField()
+    pet_date_time = serializers.DateTimeField()
+    description = serializers.CharField()
+    phone_number = serializers.IntegerField()
+    photo = serializers.CharField()
+
+    class Meta:
+        model = models.Comments
+
