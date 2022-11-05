@@ -5,8 +5,25 @@ export const userSlice = createSlice({
   initialState: {
     name: "",
     surname: "",
-    isModalOpen: false,
-    modalId: 1,
+    modalOpen: false,
+    modalData: {
+      id: 1,
+      title: "Zagubiony kot!",
+      author: "Jan Szuka",
+      location: {
+        longtitude: "52.40654798907811",
+        latitude: "16.937741942432073",
+      },
+      post_date_time: "2020-01-01T15:10:10Z",
+      pet_date_time: "2020-01-01T15:10:10Z",
+      description: "Black Cat. Big.",
+      phone_number: 402241998,
+      tags: ["cat", "Poznań"],
+      reward: {
+        value: 0,
+        description: "brak",
+      },
+    },
   },
 
   reducers: {
@@ -17,24 +34,16 @@ export const userSlice = createSlice({
     setUserSurname(state, action) {
       state.surname = action.payload;
     },
-    openModal(state) {
-      state.isModalOpen = true;
+    setModalOpen(state, action) {
+      state.modalOpen = action.payload;
     },
-    closeModal(state) {
-      state.isModalOpen = true;
-    },
-    setModalId(state, action) {
-      state.isModalOpen = action.payload;
+    setModalData(state, action) {
+      state.modalData = action.payload;
     },
   },
 });
 
-export const {
-  setUserName,
-  setUserSurname,
-  openModal,
-  closeModal,
-  setModalId,
-} = userSlice.actions;
+export const { setUserName, setUserSurname, setModalData, setModalOpen } =
+  userSlice.actions;
 
 export default userSlice.reducer;
