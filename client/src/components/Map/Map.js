@@ -4,13 +4,10 @@ import { useEffect, useState } from "react";
 
 import GoogleMapReact from 'google-map-react';
 import MapMarker from "../MapMarker/MapMarker";
-import { fetchPosts } from '../../redux/postsSlice';
-import { useDispatch } from 'react-redux';
 
-function Map() {
+function Map(props) {
     const [position, setPosition] = useState({lat: 52.43205668262439, lng: 17.072698615344446});
-    const [zoom, setZoom] = useState(15);
-    const dispatch = useDispatch();
+    const zoom = 15;
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -19,9 +16,7 @@ function Map() {
                 lng: position.coords.longitude
             });
         });
-
-        dispatch(fetchPosts());
-    }, [dispatch]);
+    }, []);
 
     const mapOptions = (maps) => {
         return {
@@ -47,7 +42,7 @@ function Map() {
     }
 
     return (
-        <div className={css.container}>
+        <div className={`${css.container} ${props.className}`}>
             <GoogleMapReact
                 bootstrapURLKeys={{ 
                     key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || "",
@@ -58,8 +53,12 @@ function Map() {
                 center={position}
                 zoom={zoom}
                 options={mapOptions}
+                onClick={({x, y, lat, lng, event}) => { if (props.type === 'select') props.setMarker({x, y, lat, lng, event});}}
             >
-                <MapMarker lat={position.lat} lng={position.lng}/>
+                {props.type === 'select' ?
+                    props.markerSelected !== undefined ? <MapMarker lat={props.markerSelected.lat} lng={props.markerSelected.lng}/> : null
+                    : null
+                }
             </GoogleMapReact>
         </div>
     )
