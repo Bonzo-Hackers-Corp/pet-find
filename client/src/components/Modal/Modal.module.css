@@ -1,6 +1,6 @@
 .background {
   position: fixed; /* Stay in place */
-  z-index: 15; /* Sit on top */
+  z-index: 100; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -20,8 +20,8 @@
   z-index: 20;
   max-width: 90vw;
   width: 100%;
-  max-height: 70vh;
-  height: 100%;
+  /* max-height: 70vh; */
+  height: fit-content;
 }
 
 .image {
@@ -64,4 +64,34 @@
   z-index: 40;
   top: 5px;
   right: 10px;
+}
+
+.commentSection {
+  width: 100%;
+}
+
+.input {
+  width: 90%;
+  left: 5%;
+}
+
+.saveButton {
+  margin-top: 10px;
+  left: 100%;
+  transform: translateX(-120%);
+}
+
+.comments {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.comment {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--black);
+  margin-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
