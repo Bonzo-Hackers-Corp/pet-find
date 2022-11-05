@@ -1,4 +1,3 @@
-from operator import mod
 from django.db import models
 
 
@@ -19,8 +18,8 @@ class Posts(models.Model):
     reward = models.JSONField(blank = True)
     
 class Comments(models.Model):
-    id = models.IntegerField(primary_key=True)
-    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
+    #id = models.IntegerField(primary_key=True)
+    post_id = models.IntegerField()
     title = models.CharField(max_length=30, help_text="Post title")
     author = models.CharField(max_length=50, help_text="Username")
     location = models.JSONField()

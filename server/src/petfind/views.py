@@ -49,6 +49,35 @@ class PostViewSet(viewsets.ModelViewSet):
         return Response(posts_serializer.data, status=status.HTTP_200_OK)
 
 
+class CommentsViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.CommentsSerializer
+    queryset = models.Comments.objects.all()
+
+    def create(self, request):
+        """
+        Submit a new comment.
+        """
+        comments_serializer = serializers.CommentsSerializer(data=request.data)
+        comments_serializer.is_valid(raise_exception=True)
+
+        comments_serializer.save()
+
+        return Response({"msg": "Comment created"}, status=status.HTTP_201_CREATED)
+
+    def list(self, request):
+        """
+        List all the posts.
+        """
+
+        post_id = request.GET["postid"] if request.GET["postid"] else None
+
+        qs = models.Comments.objects.filter(post_id=int(post_id))
+        comments_serializer = serializers.CommentsSerializer(qs, many=True)
+
+
+        return Response(comments_serializer.data, status=status.HTTP_200_OK)
+
+
 class ListShelters(APIView):
     """
     View to list shelters.
