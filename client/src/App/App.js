@@ -9,13 +9,11 @@ import BottomBar from "../components/BottomBar/BottomBar";
 import CardList from "../components/CardList/CardList";
 
 function App() {
-  const router = useRouter();
-  const { isModalOpen } = router.query;
   return (
     <div className={css.app}>
       <TopBar />
       <Map />
-      {isOpen && <Modal />}
+      {true && <Modal />}
       <CardList />
       <BottomBar />
     </div>
