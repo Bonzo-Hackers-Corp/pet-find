@@ -8,8 +8,8 @@ const CardList = () => {
 
   return (
     <div className={css.container}>
-      {postList.map((item) => (
-        <Card data={item}/>
+      {postList.map((item, index) => (
+        <Card data={item} key={`card-${index}`}/>
       ))}
     </div>
   );

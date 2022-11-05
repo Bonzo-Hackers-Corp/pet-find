@@ -64,12 +64,13 @@ const Modal = () => {
 
         <div className={css.commentSection}>
           <TextField id="standard-basic" label="Dodaj komentarz" variant="standard" multiline className={css.input} onChange={({target}) => setNewComment(target.value)}/>
+          <div style={{width: '100%', minHeight: "10px"}} />
           <Button variant="outlined" onClick={() => addComment()} className={css.saveButton}>Dodaj</Button>
 
           <div className={css.comments}>
-            {comments.map((comment) => {
+            {comments.map((comment, index) => {
               return (
-                <div className={css.comment}>
+                <div className={css.comment} key={`comment-${index}`}>
                   <p style={{fontWeight: 700}}>{comment.author}</p>
                   <p>{comment.description}</p>
                 </div>

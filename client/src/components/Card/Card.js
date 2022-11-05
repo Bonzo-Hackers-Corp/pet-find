@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./Card.module.css";
 import Image from "./dog.jpg";
 import { useDispatch } from "react-redux";
 import { setModalData, setModalOpen } from "../../redux/userSlice.js";
-
-const cardClick = (props, dispatch) => {
-  dispatch(setModalData(props.data));
-  dispatch(setModalOpen(true));
-};
+import { setMapPosition } from "../../redux/postsSlice";
 
 const Card = (props) => {
   const dispatch = useDispatch();
+  const [presses, setPresses] = useState(0);
+
+  const cardClick = () => {
+    if (presses === 0) {
+      dispatch(setMapPosition({
+        lat: parseFloat(props.data.location.latitude), 
+        lng: parseFloat(props.data.location.longtitude)
+      }));
+      setPresses(1);
+      setTimeout(() => {setPresses(0)}, 1000);
+      return;
+    }
+
+    if (presses === 1) {
+      dispatch(setModalData(props.data));
+      dispatch(setModalOpen(true));
+      return;
+    }
+
+    setPresses(0);
+  };
   
   return (
     <div className={css.container}>

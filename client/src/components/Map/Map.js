@@ -4,19 +4,21 @@ import { useEffect, useState } from "react";
 
 import GoogleMapReact from 'google-map-react';
 import MapMarker from "../MapMarker/MapMarker";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMapPosition } from "../../redux/postsSlice";
 
 function Map(props) {
-    const [position, setPosition] = useState({lat: 52.43205668262439, lng: 17.072698615344446});
+    const position = useSelector(state => state.posts.mapPosition);
     const zoom = 15;
     const posts = useSelector(state => state.posts.posts);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
-            setPosition({
+            dispatch(setMapPosition({
                 lat: position.coords.latitude, 
                 lng: position.coords.longitude
-            });
+            }));
         });
     }, []);
 

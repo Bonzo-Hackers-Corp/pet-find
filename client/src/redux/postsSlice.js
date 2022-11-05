@@ -10,9 +10,14 @@ export const postsSlice = createSlice({
   name: "posts",
   initialState: {
     posts: [],
+    mapPosition: {lat: 52.43205668262439, lng: 17.072698615344446}
   },
 
-  reducers: {},
+  reducers: {
+    setMapPosition(state, action) {
+      state.mapPosition = action.payload;
+    }
+  },
 
   extraReducers: (builder) => {
     builder.addCase(fetchPosts.fulfilled, (state, action) => {
@@ -20,5 +25,7 @@ export const postsSlice = createSlice({
     });
   },
 });
+
+export const { setMapPosition } = postsSlice.actions;
 
 export default postsSlice.reducer;
