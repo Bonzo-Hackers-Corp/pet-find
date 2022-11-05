@@ -12,6 +12,7 @@ import Map from "../components/Map/Map";
 import BottomBar from "../components/BottomBar/BottomBar";
 import CardList from "../components/CardList/CardList";
 import NewPostOverlay from "../components/NewPostOverlay/NewPostOverlay";
+import ShelterList from "../components/ShelterList/ShelterList";
 
 function App() {
   const [newPostOverlayVisible, setNewPostOverlayVisible] = useState(false);
@@ -33,6 +34,8 @@ function App() {
       />
 
       <NewPostOverlay visible={newPostOverlayVisible} onCancel={() => setNewPostOverlayVisible(false)}/>
+
+      {/* <ShelterList /> */}
     </div>
   );
 }
