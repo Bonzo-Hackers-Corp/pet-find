@@ -15,8 +15,8 @@ class Command(BaseCommand):
             data = json.loads(mock_data)
         
         for shelter in data:
-            post_serializer = serializers.PostSerializer(data=shelter)
-            post_serializer.is_valid(raise_exception=True)
+            shelter_serializer = serializers.ShelterSerializer(data=shelter)
+            shelter_serializer.is_valid(raise_exception=True)
 
-            post_serializer.save()  
+            shelter_serializer.save()  
         
