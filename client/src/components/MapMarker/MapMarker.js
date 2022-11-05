@@ -1,12 +1,11 @@
 import React from "react";
 import css from './MapMarker.module.css';
-import image from '../Card/dog.jpg';
 
 function Pin(props) {
     return (
         <>
             <div className={css.imageContainer}>
-                <img src={image} alt="pet" className={css.image}/>
+                {props.image !== undefined && <img src={props.image} alt="pet" className={css.image}/>}
             </div>
             <svg x="0px" y="0px" viewBox="0 0 498.22 498.22" width="100%" height="100%" className={css.svg}>
                 <g>

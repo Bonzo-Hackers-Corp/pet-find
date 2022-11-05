@@ -13,7 +13,7 @@
     width: 50%;
     height: 50%;
     border-radius: 100%;
-    background-color: red;
+    background-color: rgb(211, 88, 255);
     z-index: -1;
     overflow: hidden;
 }
