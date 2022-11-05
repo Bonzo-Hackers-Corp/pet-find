@@ -55,3 +55,13 @@ class CommentsSerializer(serializers.ModelSerializer):
         model = models.Comments
         fields = '__all__'
 
+class SheltersSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(max_length= 80)
+    location = serializers.JSONField()
+    description = serializers.CharField()
+    phone_number = serializers.IntegerField()
+
+    class Meta:
+        model  = models.Shelters
+        fields = '__all__'
+
