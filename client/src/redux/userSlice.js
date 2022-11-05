@@ -5,6 +5,7 @@ export const userSlice = createSlice({
   initialState: {
     name: "",
     surname: "",
+    phone: "",
     modalOpen: false,
     modalData: {
       id: 1,
