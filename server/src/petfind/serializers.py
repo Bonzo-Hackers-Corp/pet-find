@@ -42,7 +42,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class CommentsSerializer(serializers.ModelSerializer):
-    post_id = serializers.IntegerField(source="posts.id")
+    post_id = serializers.IntegerField()
     title = serializers.CharField(help_text="Post title")
     author = serializers.CharField(help_text="Username")
     location = serializers.JSONField()
@@ -54,4 +54,5 @@ class CommentsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Comments
+        fields = '__all__'
 

@@ -68,7 +68,10 @@ class CommentsViewSet(viewsets.ModelViewSet):
         """
         List all the posts.
         """
-        qs = models.Comments.objects.all()
+
+        post_id = request.GET["postid"] if request.GET["postid"] else None
+
+        qs = models.Comments.objects.filter(post_id=int(post_id))
         comments_serializer = serializers.CommentsSerializer(qs, many=True)
 
 
