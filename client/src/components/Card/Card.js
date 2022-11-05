@@ -7,7 +7,6 @@ import { setModalData, setModalOpen } from "../../redux/userSlice.js";
 const cardClick = (props, dispatch) => {
   dispatch(setModalData(props));
   dispatch(setModalOpen(true));
-  console.log(props);
 };
 
 const Card = (props) => {

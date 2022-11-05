@@ -23,13 +23,11 @@ const Modal = () => {
         </button>
         <img className={css.image} src={Image} alt="dog" />
         <div className={css.description}>
-          <div className={css.title}>Zaginął pies!!!!!</div>
-          <div className={css.info}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam
-            voluptatum dignissimos a tempore quaerat nostrum consequatur nisi
-            quas in praesentium.
+          <div className={css.title}>{postData.title}</div>
+          <div className={css.info}>{postData.description}</div>
+          <div className={css.phone}>
+            Numer telefonu: {postData.phone_number}
           </div>
-          <div className={css.phone}>Numer telefonu: 123456789</div>
         </div>
       </div>
     </div>

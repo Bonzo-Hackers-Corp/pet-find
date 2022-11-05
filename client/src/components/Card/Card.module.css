@@ -51,6 +51,9 @@
   font-size: x-large;
   color: var(--black);
   text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .info {
