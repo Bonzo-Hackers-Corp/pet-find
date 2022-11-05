@@ -9,26 +9,36 @@
   }
 }
 
-@media all and (min-width: 0px) and (max-width: 500px) {
-  .container {
-    aspect-ratio: 4/3;
-    height: 100%;
-    max-width: 60vw;
-    margin-right: 10px;
-    border-radius: 1rem;
-    display: inline-block;
-    flex-direction: column;
-  }
+.container {
+  height: 100%;
+  max-width: 60vw;
+  margin-right: 10px;
+  border-radius: 1rem;
+  display: inline-block;
+  flex-direction: column;
 }
 
 .container:hover {
   box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
 }
+.test {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
 
 .image {
-  object-fit: scale-down;
-  border-radius: 0.5rem;
+  max-width: 100%;
+  transition: all 0.5s;
+  display: block;
   width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+
+.image:hover {
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .description {
